@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile, tablet, tabletPro, laptop, laptopPro } from "../../responsive";
 
 const Item = ({ item }) => {
   return (
@@ -20,14 +21,34 @@ const Item = ({ item }) => {
 };
 
 const Container = styled.div`
-  width: 46.2%;
   height: 180px;
   margin: 20px;
   display: flex;
+
+  ${laptop({
+    height: "160px",
+  })}
+
+  ${tabletPro({
+    height: "150px",
+  })}
+
+  ${tablet({
+    height: "130px",
+  })}
+
+  ${mobile({
+    flexDirection: "column",
+    height: "auto",
+  })}
 `;
 
 const ImageWrapper = styled.div`
   flex: 2;
+  
+  ${mobile({
+    marginBottom: "15px",
+  })}
 `;
 
 const Image = styled.img`
@@ -36,6 +57,10 @@ const Image = styled.img`
   object-fit: cover;
   border: 5px solid green;
   border-radius: 3px;
+
+  ${mobile({
+    height: "200px",
+  })}
 `;
 
 const InfoWrapper = styled.div`
@@ -43,6 +68,10 @@ const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 20px;
+
+  ${mobile({
+    marginLeft: "0"
+  })}
 `;
 
 const Top = styled.div`
@@ -51,6 +80,9 @@ const Top = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px dashed #000;
+  padding-bottom: 3px;
+  font-weight: 600;
+  text-transform: capitalize;
 `;
 
 const Name = styled.p`

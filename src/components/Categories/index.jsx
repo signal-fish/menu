@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { mobile, tablet, tabletPro, laptop, laptopPro } from "../../responsive";
 
 const Categories = ({ categories, filterItems }) => {
   return (
@@ -20,6 +21,10 @@ display: flex;
 justify-content: center;
 margin-bottom: 20px;
 
+${mobile({
+  width: "100%",
+  flexWrap: "wrap"
+})}
 `
 
 const Button = styled.button`
